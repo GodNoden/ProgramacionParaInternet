@@ -13,6 +13,9 @@ export default class Login extends Component {
   }
 
   render() {
+    const btnClick = () => {
+      this.props.navigation.navigate("pantalla2");
+    }
     return (
       <View>
         <Text style={styles.textoudg}> UDG </Text>
@@ -20,7 +23,7 @@ export default class Login extends Component {
         <TextInput style={styles.input} placeholder="Codigo"></TextInput>
         <TextInput style={styles.input} placeholder="NIP"></TextInput>
         <View style={styles.button}>
-          <Button title="Entrar"></Button>
+          <Button title="Entrar" onPress={btnClick}></Button>
         </View>
       </View>
     );
