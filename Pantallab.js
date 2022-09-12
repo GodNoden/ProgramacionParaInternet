@@ -11,7 +11,8 @@ export default class Pantallab extends Component {
   render() {
     return (
       <View>
-        <Text> Pantallab </Text>
+        <Text style={{fontSize=16}}> Bienvenido: {this.props.route.params.nombre} </Text>
+        <Text style={{fontsize=16}}> {this.props.route.params.codigo} </Text>
       </View>
     );
   }

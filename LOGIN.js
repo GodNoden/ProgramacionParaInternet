@@ -14,16 +14,32 @@ export default class Login extends Component {
   }
 
   render() {
+
+    /*const pantallab = () => {
+      this.props.navigation.navigate("pantallab");
+    }*/
     const btnClick = () => {
       //this.props.navigation.navigate("pantalla2");
+      //var _this = this;
+
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
           // Typical action to be performed when the document is ready:
           console.log(xhttp.responseText);
+          if (xhttp.responseText === 0) {
+            //error alert
+          } else {
+            let resultado = xhttp.responseText;
+            let datos = resultado.split(',');
+            console.log(datos[1]);
+            console.log(datos[2]);
+            //pantallab();
+            //_this.props.navigation.navigate("pantallab", {nombre:datos[2], codigo:datos[1]});
+          }
         }
       };
-      xhttp.open("GET", "http://148.202.152.33/ws_claseaut.php?codigo=" + this.state.codigo+"&nip="+this.state.nip, true);
+      xhttp.open("GET", "http://148.202.152.33/ws_claseaut.php?codigo=" + this.state.codigo + "&nip=" + this.state.nip, true);
       xhttp.send();
     }
 
