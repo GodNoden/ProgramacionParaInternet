@@ -17,7 +17,7 @@ export default class Pantallab extends Component {
         _this.setState({users: myArr});
       }
     };
-    xhttp.open('GET', 'LINK OF WEBHOST GOES HERE', true);
+    xhttp.open('GET', 'https://myawesomewebsitebynoe.000webhostapp.com/mostrarDatos.php', true);
     xhttp.send();
   }
 

@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from "react";
 import { Button, StyleSheet, TextInput } from "react-native";
 
@@ -15,12 +16,13 @@ export default class Login extends Component {
 
   render() {
 
-    /*const pantallab = () => {
+    const pantallab = () => {
       this.props.navigation.navigate("pantallab");
-    }*/
+    }
     const btnClick = () => {
-      //this.props.navigation.navigate("pantalla2");
-      //var _this = this;
+      var _this = this;
+      _this.props.navigation.navigate("pantallab");
+      
 
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function () {
@@ -34,8 +36,8 @@ export default class Login extends Component {
             let datos = resultado.split(',');
             console.log(datos[1]);
             console.log(datos[2]);
-            //pantallab();
-            //_this.props.navigation.navigate("pantallab", {nombre:datos[2], codigo:datos[1]});
+            pantallab();
+            _this.props.navigation.navigate("pantallab", {nombre:datos[2], codigo:datos[1]});
           }
         }
       };
